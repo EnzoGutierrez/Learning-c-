@@ -3,7 +3,7 @@ using System;
 namespace PrimeraAplicacion
 
 {
-    clas Program
+    class Program
     { static void Main(String[] args)
         {
             Random numero = new Random();
