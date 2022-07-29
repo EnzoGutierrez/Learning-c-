@@ -1,0 +1,53 @@
+using System;
+
+namespace UsoArrays
+{
+    class program
+    {
+        static void Main(string[] args)
+        {
+            Juegos[] arrayJuegos = new Juegos[5];
+
+            arrayJuegos[0] = new Juegos("GTA", 1000);
+
+            arrayJuegos[1] = new Juegos("COD", 900);
+
+            arrayJuegos[2] = new Juegos("Minecraft", 1500);
+
+            arrayJuegos[3] = new Juegos("CSGO", 800);
+
+            arrayJuegos[4] = new Juegos("Terraria", 400);
+
+            //Usando el bucle for
+
+            for (int i = 0; i < arrayJuegos.Length; i++)
+            {
+                Console.WriteLine(arrayJuegos[i].GetInfo());
+            }
+
+            //Usando el bucle foreach
+
+            foreach (Juegos juegos in arrayJuegos)
+            {
+                Console.WriteLine((juegos.GetInfo()));
+            }
+        }
+
+        class Juegos
+        {
+            public Juegos(string nombre, int copias)
+            {
+                this.nombre = nombre;
+                this.copias = copias;
+            }
+
+            public string GetInfo()
+            {
+                return "Nombre del juego: " + nombre + ", Copias: " + copias; 
+            }
+
+            string nombre;
+            int copias;
+        }
+    }
+}
