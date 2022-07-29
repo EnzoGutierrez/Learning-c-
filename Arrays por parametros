@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Arrays_por_parametro
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] arrayElem = LeerDatos();
+
+            Console.WriteLine("---Imprimiendo numeros---");
+
+            foreach(int i in arrayElem)
+            {
+                Console.WriteLine(i);
+            }
+        }
+
+        static int[] LeerDatos()
+        {
+            Console.WriteLine("Ingrese cantidad de datos a cargar: ");
+            
+            string cantidad = Console.ReadLine();
+            int numElem = int.Parse(cantidad);
+
+            int[] datos = new int[numElem];
+
+            for(int i = 0; i < numElem; i++)
+            {
+                Console.WriteLine($"Introduce el valor para la posicion {i}: ");
+
+                cantidad = Console.ReadLine();
+                int datoElem = int.Parse(cantidad);
+
+                datos[i] = datoElem;
+            }
+           
+            return datos;
+        }
+    }
+}
