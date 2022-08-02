@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Programacion_generica
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            AlmacenObjetos<Empleado> archivos = new AlmacenObjetos<Empleado>(4);
+
+            archivos.agregar(new Empleado(1500));
+
+            archivos.agregar(new Empleado(3500));
+
+            archivos.agregar(new Empleado(500));
+
+            archivos.agregar(new Empleado(10000));
+
+            Empleado salarioEmpleado = archivos.getElemento(3);
+
+            Console.WriteLine(salarioEmpleado.getSalario());
+
+        }
+
+        class AlmacenObjetos<T>
+        {
+            private T [] datosElementos;
+
+            private int i = 0;
+            public AlmacenObjetos(int z)
+            {
+                datosElementos = new T[z];
+            }
+
+            public void agregar( T obj)
+            {
+                datosElementos[i] = obj;
+
+                i++;
+            }
+
+            public T getElemento(int i)
+            {
+                return datosElementos[i];
+            }
+        }
+
+        class Empleado
+        {
+            private double salario;
+
+            public Empleado(double salario)
+            {
+                this.salario = salario;
+            }
+
+            public double getSalario()
+            {
+                return salario;
+            }
+        }
+    }
+}
